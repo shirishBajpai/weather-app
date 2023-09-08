@@ -9,7 +9,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <div className='App'> <App/></div>
+   <App/>
   </Provider>
 );
 reportWebVitals();
