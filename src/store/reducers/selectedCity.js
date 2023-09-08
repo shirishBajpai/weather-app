@@ -1,17 +1,46 @@
-import { CITY } from './reduxConstants';
+import {
+  CITY,
+  FETCHING_CURRENT_WEATHER,
+  GET_CURRENT_WEATHER,
+} from "./reduxConstants";
+import cities from "../../data/French-cities.json";
+
+const {nm,lat,lon}= cities[0]
 
 const initialState = {
-	city: ''
+  city: nm,
+  lat: lat,
+  lon: lon,
+  fetchingCurrentWeather: false,
+  temp: 0,
 };
 
 const selectedCity = (state = initialState, action) => {
-	switch (action.type) {
-		case CITY:
-			return { city: action.payload};
+  switch (action.type) {
+    case CITY:
+      return {
+        ...state,
+        city: action.payload.city,
+        lat: action.payload.lat,
+        lon: action.payload.lon,
+      };
+    case FETCHING_CURRENT_WEATHER:
+      return {
+        ...state,
+        fetchingCurrentWeather: true,
+      };
 
-		default:
-			return state;
-	}
+    case GET_CURRENT_WEATHER:
+      return {
+        ...state,
+        temp: action.payload.main.temp,
+        icon: action.payload.weather[0].id,
+        fetchingCurrentWeather: false,
+      };
+
+    default:
+      return state;
+  }
 };
 
 export default selectedCity;

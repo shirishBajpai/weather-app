@@ -1,0 +1,31 @@
+.forecasts {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+  font-size: 2rem;
+}
+
+.forecasrPerDay {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.weekDay {
+  background-color: rgb(136, 90, 171);
+  padding: 0.25rem 10rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.WeekTemps {
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.icons{
+  color: white;
+  font-size: 4rem;
+  margin: 2rem 0;
+}
