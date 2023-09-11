@@ -14,7 +14,7 @@ export const currentCityWeather = (lat, lon) => {
 
       dispatch({ type: GET_CURRENT_WEATHER, payload: data });
     } catch (error) {
-      const errorMessage = error?.response?.data?.error?.developer_message;
+      // const errorMessage = error?.response?.data?.error?.developer_message;
       // dispatch({
       // 	type: GET_PAG_TIERS_ERROR,
       // 	payload: errorMessage ? errorMessage : FALLBACK_ERROR_MESSAGE

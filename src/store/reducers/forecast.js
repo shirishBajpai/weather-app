@@ -2,7 +2,6 @@ import {
     FETCHING_FORECAST,
     GET_FORECAST,
   } from "./reduxConstants";
-  import cities from "../../data/French-cities.json";
   
   const initialState = {
     fetchingForecast: false,
