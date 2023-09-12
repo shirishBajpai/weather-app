@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  ERROR_CURRENT_WEATHER,
   FETCHING_CURRENT_WEATHER,
   GET_CURRENT_WEATHER,
 } from "../reducers/reduxConstants";
@@ -14,13 +15,15 @@ export const currentCityWeather = (lat, lon) => {
 
       dispatch({ type: GET_CURRENT_WEATHER, payload: data });
     } catch (error) {
-      // const errorMessage = error?.response?.data?.error?.developer_message;
-      // dispatch({
-      // 	type: GET_PAG_TIERS_ERROR,
-      // 	payload: errorMessage ? errorMessage : FALLBACK_ERROR_MESSAGE
-      // });
+      const errorMessage = error?.response?.data?.message;
+
+      console.log(errorMessage);
+      dispatch({
+        type: ERROR_CURRENT_WEATHER,
+        payload: errorMessage,
+      });
     } finally {
-      // dispatch({ type: FETCHING_PAG_TIERS, payload: false });
+      dispatch({ type: FETCHING_CURRENT_WEATHER, payload: false });
     }
   };
 };

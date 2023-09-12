@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCHING_FORECAST, GET_FORECAST } from "../reducers/reduxConstants";
+import { ERROR_FORECAST, FETCHING_FORECAST, GET_FORECAST } from "../reducers/reduxConstants";
 
 export const forecast= (lat,lon) => {
   return async (dispatch) => {
@@ -10,13 +10,13 @@ export const forecast= (lat,lon) => {
       );
       dispatch({ type: GET_FORECAST, payload: data });
     } catch (error) {
-      // const errorMessage = error?.response?.data?.error?.developer_message;
-      // dispatch({
-      // 	type: GET_PAG_TIERS_ERROR,
-      // 	payload: errorMessage ? errorMessage : FALLBACK_ERROR_MESSAGE
-      // });
+      const errorMessage = error?.response?.data?.message;
+      dispatch({
+      	type: ERROR_FORECAST,
+      	payload: errorMessage
+      });
     } finally {
-      // dispatch({ type: FETCHING_PAG_TIERS, payload: false });
+      dispatch({ type: FETCHING_FORECAST, payload: false });
     }
   };
 };

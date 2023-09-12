@@ -14,7 +14,7 @@ import {
       case FETCHING_FORECAST:
         return {
           ...state,
-          fetchingForecast: true,
+          fetchingForecast: action.payload,
         };
   
       case GET_FORECAST:

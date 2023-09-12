@@ -1,5 +1,6 @@
 import {
   CITY,
+  ERROR_CURRENT_WEATHER,
   FETCHING_CURRENT_WEATHER,
   GET_CURRENT_WEATHER,
 } from "./reduxConstants";
@@ -27,7 +28,7 @@ const selectedCity = (state = initialState, action) => {
     case FETCHING_CURRENT_WEATHER:
       return {
         ...state,
-        fetchingCurrentWeather: true,
+        fetchingCurrentWeather: action.payload,
       };
 
     case GET_CURRENT_WEATHER:
@@ -37,6 +38,12 @@ const selectedCity = (state = initialState, action) => {
         icon: action.payload.weather[0].id,
         fetchingCurrentWeather: false,
       };
+
+    case ERROR_CURRENT_WEATHER:
+      return {
+        ...state,
+        error: action.payload
+      }
 
     default:
       return state;
