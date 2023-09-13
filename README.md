@@ -53,11 +53,11 @@ Here's a curated list of packages that you should be at least familiar with befo
 
 The other folders are mostly for the maintainers and/or the setup, and you should absolutely never need to touch them so we are going skip them for the sake of brevity.
 ### code-coverage for each files
-![Alt text](image.png)
+![Alt text](./assets/image.png)
 
 ## Performance
-![Alt text](image-1.png)
-# Application setup
+![Alt text](./assets/image-1.png)
+## Application setup
 
 - Run command for installation and server to start
 ```
