@@ -1,6 +1,8 @@
 
 # Guide to `Weather-app`
 
+This Application is live here https://ornate-biscotti-f650c2.netlify.app/   &#128640; &#x1F680;
+
 ## Tech Stack
 
 Here's a curated list of packages that you should be at least familiar with before starting your project. However, the best way to see a complete list of the dependencies is to check [package.json](https://github.com/shirishSIB/weather-app/blob/main/package.json).
@@ -76,7 +78,7 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 - Clone your fork: `git clone https://github.com/shirishSIB/weather-app.git`
 - Navigate to the newly cloned directory: `cd weather-app`
 - Create a new branch for the new feature: `git checkout -b my-new-feature`
-- Install the tools necessary for development: `npm`
+- Install the tools necessary for development: `npm i`
 - Make your changes.
 - Commit your changes: `git commit -m 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
