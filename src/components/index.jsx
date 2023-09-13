@@ -2,7 +2,7 @@ import CurrentWeather from "./currentWeater/CurrentWeather.jsx";
 import ForeCast from "./forecast/Forecast.jsx";
 import SelectCities from "./selectCities/SelectCities.jsx";
 import { useSelector } from "react-redux";
-import "./Weather.css";
+import "./common/Weather.css";
 
 const Weather = () => {
   const { city , lat, lon, temp, icon, fetchingCurrentWeather = false } = useSelector(
