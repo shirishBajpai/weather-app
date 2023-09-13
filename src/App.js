@@ -1,8 +1,12 @@
-import Weather from "./components";
+import Weather from "./components/index.jsx";
+import { Provider } from "react-redux";
+import store from "./store/Store.js";
 
 function App() {
   return (
-    <Weather/>
+    <Provider store={store}>
+      <Weather />
+    </Provider>
   );
 }
 

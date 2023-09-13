@@ -3,7 +3,7 @@ import {
   ERROR_CURRENT_WEATHER,
   FETCHING_CURRENT_WEATHER,
   GET_CURRENT_WEATHER,
-} from "../reducers/reduxConstants";
+} from "../reducers/reduxConstants.js";
 
 export const currentCityWeather = (lat, lon) => {
   return async (dispatch) => {

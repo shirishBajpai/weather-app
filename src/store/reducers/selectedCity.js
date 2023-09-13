@@ -3,7 +3,7 @@ import {
   ERROR_CURRENT_WEATHER,
   FETCHING_CURRENT_WEATHER,
   GET_CURRENT_WEATHER,
-} from "./reduxConstants";
+} from "./reduxConstants.js";
 import cities from "../../data/French-cities.json";
 
 const {nm,lat,lon}= cities[0]

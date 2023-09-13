@@ -1,12 +1,15 @@
-import CurrentWeather from "./currentWeater/CurrentWeather";
-import ForeCast from "./forecast/Forecast";
-import SelectCities from "./selectCities/SelectCities";
+import CurrentWeather from "./currentWeater/CurrentWeather.jsx";
+import ForeCast from "./forecast/Forecast.jsx";
+import SelectCities from "./selectCities/SelectCities.jsx";
 import { useSelector } from "react-redux";
-import './Weather.css'
+import "./Weather.css";
 
 const Weather = () => {
-  const { city, lat, lon, temp, icon, fetchingCurrentWeather } = useSelector(
-    (state) => state?.selectedCity
+  const { city , lat, lon, temp, icon, fetchingCurrentWeather } = useSelector(
+    (state) => state?.selectedCity || {}
+  );
+  const { forecastList = [], fetchingForecast } = useSelector(
+    (state) => state?.forecast || {}
   );
 
   return (
@@ -20,7 +23,12 @@ const Weather = () => {
         icon={icon}
         fetchingCurrentWeather={fetchingCurrentWeather}
       />
-      <ForeCast lat={lat} lon={lon} />
+      <ForeCast
+        lat={lat}
+        lon={lon}
+        forecastList={forecastList}
+        fetchingForecast={fetchingForecast}
+      />
     </div>
   );
 };

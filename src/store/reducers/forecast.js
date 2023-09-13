@@ -1,7 +1,7 @@
 import {
     FETCHING_FORECAST,
     GET_FORECAST,
-  } from "./reduxConstants";
+  } from "./reduxConstants.js";
   
   const initialState = {
     fetchingForecast: false,

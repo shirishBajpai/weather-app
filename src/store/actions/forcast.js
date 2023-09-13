@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ERROR_FORECAST, FETCHING_FORECAST, GET_FORECAST } from "../reducers/reduxConstants";
+import { ERROR_FORECAST, FETCHING_FORECAST, GET_FORECAST } from "../reducers/reduxConstants.js";
 
 export const forecast= (lat,lon) => {
   return async (dispatch) => {

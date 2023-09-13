@@ -22,10 +22,12 @@ const CurrentWeather = ({
     <div className="current">
       <div className="city">{currentCity}</div>
       {fetchingCurrentWeather ? (
-        <Spinner/>
+        <div data-testid="spinner">
+          <Spinner />
+        </div>
       ) : (
         <>
-         <div className={`wi wi-icon-${icon} icons`}></div>
+          <div className={`wi wi-icon-${icon} icons`}></div>
           <div className="temp">{(temp - 273.15).toFixed(1)}&deg;</div>
         </>
       )}

@@ -9,12 +9,13 @@ const SelectCities = ({ currentCity }) => {
   const handleSelectChange = (event) => {
     const { lat, lon } = cities.find((city) => city.nm === event.target.value);
     const payload = { city: event.target.value, lat: lat, lon: lon };
-    
+
     dispatch(setCity(payload));
   };
 
   return (
     <select
+      data-testid="select"
       className="select"
       onChange={handleSelectChange}
       value={currentCity}>
