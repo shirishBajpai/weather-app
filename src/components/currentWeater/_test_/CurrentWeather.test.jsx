@@ -1,8 +1,8 @@
 import { render, screen } from "weather-app/tests/jest/test-utils.js";
 import CurrentWeather from "../CurrentWeather.jsx";
 
-describe("ForeCast Component", () => {
-  test("dispatches forecast action with correct arguments",async () => {
+describe("CurrentWeather Component", () => {
+  test("renders component",async () => {
     const props = {
         currentCity: "Abbeville",
         lat: 50.099998,

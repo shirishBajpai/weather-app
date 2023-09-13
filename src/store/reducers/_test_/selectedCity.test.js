@@ -1,15 +1,15 @@
-import selectedCity from '../selectedCity'; // Import your reducer
+import selectedCity from "../selectedCity";
 import {
   CITY,
   ERROR_CURRENT_WEATHER,
   FETCHING_CURRENT_WEATHER,
   GET_CURRENT_WEATHER,
-} from '../reduxConstants';
+} from "../reduxConstants";
 
-describe('selectedCity', () => {
-  it('should return the initial state', () => {
+describe("selectedCity", () => {
+  it("should return the initial state", () => {
     const initialState = {
-      city: 'Abbeville',
+      city: "Abbeville",
       lat: 50.099998,
       lon: 1.83333,
       fetchingCurrentWeather: false,
@@ -20,9 +20,9 @@ describe('selectedCity', () => {
     expect(state).toEqual(initialState);
   });
 
-  it('should handle CITY action', () => {
+  it("should handle CITY action", () => {
     const initialState = {
-      city: 'City Name',
+      city: "City Name",
       lat: 0,
       lon: 0,
       fetchingCurrentWeather: false,
@@ -32,7 +32,7 @@ describe('selectedCity', () => {
     const action = {
       type: CITY,
       payload: {
-        city: 'New City Name',
+        city: "New City Name",
         lat: 123,
         lon: 456,
       },
@@ -47,9 +47,9 @@ describe('selectedCity', () => {
     });
   });
 
-  it('should handle FETCHING_CURRENT_WEATHER action', () => {
+  it("should handle FETCHING_CURRENT_WEATHER action", () => {
     const initialState = {
-      city: 'City Name',
+      city: "City Name",
       lat: 0,
       lon: 0,
       fetchingCurrentWeather: false,
@@ -68,9 +68,9 @@ describe('selectedCity', () => {
     });
   });
 
-  it('should handle GET_CURRENT_WEATHER action', () => {
+  it("should handle GET_CURRENT_WEATHER action", () => {
     const initialState = {
-      city: 'City Name',
+      city: "City Name",
       lat: 0,
       lon: 0,
       fetchingCurrentWeather: true,
@@ -94,9 +94,9 @@ describe('selectedCity', () => {
     });
   });
 
-  it('should handle ERROR_CURRENT_WEATHER action', () => {
+  it("should handle ERROR_CURRENT_WEATHER action", () => {
     const initialState = {
-      city: 'City Name',
+      city: "City Name",
       lat: 0,
       lon: 0,
       fetchingCurrentWeather: false,
@@ -105,7 +105,7 @@ describe('selectedCity', () => {
 
     const action = {
       type: ERROR_CURRENT_WEATHER,
-      payload: 'Error message',
+      payload: "Error message",
     };
 
     const state = selectedCity(initialState, action);
@@ -115,9 +115,9 @@ describe('selectedCity', () => {
     });
   });
 
-  it('should return the current state for unknown action type', () => {
+  it("should return the current state for unknown action type", () => {
     const initialState = {
-      city: 'City Name',
+      city: "City Name",
       lat: 0,
       lon: 0,
       fetchingCurrentWeather: false,
@@ -125,8 +125,8 @@ describe('selectedCity', () => {
     };
 
     const action = {
-      type: 'UNKNOWN_ACTION',
-      payload: 'Some data',
+      type: "UNKNOWN_ACTION",
+      payload: "Some data",
     };
 
     const state = selectedCity(initialState, action);

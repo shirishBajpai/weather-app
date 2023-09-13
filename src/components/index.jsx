@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 import "./Weather.css";
 
 const Weather = () => {
-  const { city , lat, lon, temp, icon, fetchingCurrentWeather } = useSelector(
+  const { city , lat, lon, temp, icon, fetchingCurrentWeather = false } = useSelector(
     (state) => state?.selectedCity || {}
   );
-  const { forecastList = [], fetchingForecast } = useSelector(
+  const { forecastList = [], fetchingForecast = false } = useSelector(
     (state) => state?.forecast || {}
   );
 
